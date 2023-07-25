@@ -41,8 +41,7 @@ https://github.com/backdrop-contrib/core_issues/wiki/Documentation (todo)
 ---
 
 Bugs and Feature Requests should be reported in the Issue Queue:
-https://github.com/backdrop-contrib/mymodule/issues.
-
+https://github.com/backdrop-contrib/core_issues/issues
 
 ### Current Maintainers
 ---
