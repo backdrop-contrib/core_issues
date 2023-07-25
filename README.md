@@ -1,11 +1,30 @@
 ## Core Issues Helper
 
-This module includes submodules that can be enabled in demo sandboxes or local
-environments, and then also on pull request sandboxes. Then you can compare the
-output/behavior of the submodule in the current version of Backdrop core vs. the
-pull request sandbox, and provide feedback on whether the problem for which the
-respective issue was created for is fixed by the changes in the pull request or
-not.
+This module is meant to make it easier for people to contribute to core issues.
+It provides various submodules, each one specific to different issue(s).
+
+The process roughly looks like this:
+
+- The person that has provided a pull request for a core issue can contribute to
+  this project here, by creating a new submodule. (todo: add instructions for
+  that + also a template submodule scaffold)
+- The submodule is then reviewed/approved by the maintainers of this here
+  project (anyone can join to help out - even the person that is submitting the
+  submodule for review), and a new release for the Core Issue Helper module is
+  created.
+- People that want to contribute by testing pull requests can then:
+  - Install the Core Issue Helper module either in a [demo sandbox](https://backdropcms.org/demo)
+    or on their local environment.
+  - Enable the submodule that corresponds to the issue they are contributing to.
+  - Also install the module and submodule(s) on the sandbox of the pull request
+    of the issue they are contributing to.
+  - Compare the output/behavior of the submodule in the current version of
+    Backdrop core vs. the version in the pull request sandbox (which includes
+    the changes that are meant to be fixing the issue).
+  - Provide feedback on whether they have found the problem for which the
+    respective issue was created for to be fixed by the changes in the pull
+    request or not.
+  - Gain the eternal gratitude of everyone in the Backdrop community! ❤️
 
 Each submodule is named `issue_1234`, where `1234` is the issue number of the
 [core issue](https://github.com/backdrop/backdrop-issues/issues) the module is
