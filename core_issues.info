@@ -1,0 +1,16 @@
+type = module
+name = Core Issues Helper
+description = Provides submodules that help people test core issues.
+backdrop = 1.x
+
+; Link to the module's configuration page.
+configure = admin/config/core_issues
+
+; Add custom CSS & JS files.
+stylesheets[all][] = css/core_issues.css
+scripts[] = js/core_issues.js
+
+; Find suggested packages and tags at: https://docs.backdropcms.org/documentation/module-packages-and-tags
+package = Development
+tags[] = Development
+tags[] = Testing
