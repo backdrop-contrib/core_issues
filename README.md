@@ -1,105 +1,63 @@
-MyModule
-========
-<!--
-The first paragraph of this file should be kept short as it will be used as the
-project summary on BackdropCMS.org. Aim for about 240 characters (three lines at
-80 characters each).
+## Core Issues Helper
 
-All lines in this file should be no more than 80 characters long for legibility,
-unless including a URL or example that requires the line to not wrap.
-|<- - - - - - - This line is exactly 80 characters for reference - - - - - - ->|
+This module includes submodules that can be enabled in demo sandboxes or local
+environments, and then also on pull request sandboxes. Then you can compare the
+output/behavior of the submodule in the current version of Backdrop core vs. the
+pull request sandbox, and provide feedback on whether the problem for which the
+respective issue was created for is fixed by the changes in the pull request or
+not.
 
-Detail in READMEs should be limited to the minimum required for installation and
-getting started. More detailed documentation should be moved to a GitHub wiki
-page; for example: https://github.com/backdrop-contrib/setup/wiki/Documentation.
--->
+Each submodule is named `issue_1234`, where `1234` is the issue number of the
+[core issue](https://github.com/backdrop/backdrop-issues/issues) the module is
+meant to help testing.
 
-MyModule enables you to...
+### Requirements
+---
 
+None specific, but depending on the core issue some submodules may have
+dependencies on other modules.
 
-Requirements
-------------
-<!--
-List any dependencies here. Remove this section if not needed.
--->
-
-This module requires that the following modules are also enabled:
-
-- [Example module](https://github.com/backdrop-contrib/example_module)
-- [Dummy library](https://github.com/backdrop-contrib/dummy_library)
-
-
-Installation
-------------
-<!--
-List the steps needed to install and configure the module. Add/remove steps as
-necessary.
--->
+### Installation
+---
 
 - Install this module using the official Backdrop CMS instructions at
   https://docs.backdropcms.org/documentation/extend-with-modules.
+- Navigate to the module management page, and enable the submodule(s) you need
+  in order to test the issue(s) you are contributing to.
+- Once enabled, each module should have a "Configure" link available, that when
+  clicked takes you to a page with further instructions and/or a test form etc.
+- Follow the instructions provided on the module page, or in the issue you are
+  contributing to.
+- Report back with the findings of your testing.
 
-- Visit the configuration page under Administration > Configuration > System >
-  MyModule (admin/config/system/mymodule) and enter the required information.
-
-- Additional steps go here...
-
-
-Documentation
--------------
-<!--
-Link to the repository's wiki if more documentation can be found there. Remove
-this section if not needed (and consider disabling the wiki in the repo settings
-if not used).
--->
+### Documentation
+---
 
 Additional documentation is located in the Wiki:
-https://github.com/backdrop-contrib/mymodule/wiki/Documentation.
+https://github.com/backdrop-contrib/core_issues/wiki/Documentation (todo)
 
 
-Issues
-------
-<!--
-Link to the repo's issue queue.
--->
+### Issues
+---
 
 Bugs and Feature Requests should be reported in the Issue Queue:
 https://github.com/backdrop-contrib/mymodule/issues.
 
 
-Current Maintainers
--------------------
-<!--
-List the current maintainer(s) of the module, and note if this module needs
-new/additional maintainers.
--->
+### Current Maintainers
+---
 
-- [Your Name](https://github.com/username)
-- Seeking additional maintainers
+- [Greg Netsas](https://github.com/klonos)
+- Seeking additional maintainers (either create an issue in the queue, or
+  @mention one of the current maintainers in our [chat](https://backdrop.zulipchat.com/#narrow/stream/218635-Backdrop/topic/Core.20Issues.20Helper)).
 
+### Credits
+---
 
-Credits
--------
-<!--
-Give credit where credit's due.
-If this is a Drupal port, state who ported it, and who wrote the original Drupal
-module. If this module is based on another project, or uses third-party
-libraries, list them here. You can also mention any organisations/companies who
-sponsored the module's development.
--->
+- Originally written for Backdrop by [Greg Netsas](https://github.com/klonos).
 
-- Ported to Backdrop CMS by [Your Name](https://github.com/username).
-- Originally written for Drupal by [Someone Else](https://github.com/username).
-- Based on [Some Other project](https://github.com/example).
-- Sponsored by [An Organization](https://example.org).
-
-
-License
--------
-<!--
-Mention what license this module is released under, and where people can find
-it.
--->
+### License
+---
 
 This project is GPL v2 software.
 See the LICENSE.txt file in this directory for complete text.
