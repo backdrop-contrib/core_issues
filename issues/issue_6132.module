@@ -1,0 +1,115 @@
+<?php
+/**
+ * @file
+ * Help with testing issue #6132.
+ * See https://github.com/backdrop/backdrop-issues/issues/6132
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function issue_6132_menu() {
+  return array(
+    'admin/config/core_issues/issue_6132' => array(
+      'title' => 'Core issue #6132',
+      'description' => 'Testing core issue #6132.',
+      'page callback' => 'backdrop_get_form',
+      'page arguments' => array('issue_6132_form'),
+      'access callback' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function issue_6132_form($form, &$form_state) {
+  $variables = array(
+    'header' => array('column 1', 'column 2'),
+    'rows' => array(
+      'foo' => array(
+        array('data' => 'option 1'),
+        array('data' => 'foo'),
+      ),
+      'bar' => array(
+        array('data' => 'option 2'),
+        array('data' => 'bar'),
+      ),
+    ),
+    'footer' => array(
+      'footer' => array(
+        array('data' => 'This is ...'),
+        array('data' => '...the footer'),
+      ),
+      'footer2' => array(
+        array('data' => 'This is ...'),
+        array('data' => '...another footer'),
+      ),
+    ),
+    'attributes' => array('test' => 'attribute'),
+    'caption' => t('This is the caption text.'),
+    // 'colgroups' => isset($element['#colgroups']) ? $element['#colgroups'] : array(),
+    'sticky' => FALSE,
+    'empty' => t('This is the "empty" text, which is shown when the tableselect or table is empty (no rows).'),
+  );
+
+  $title = t('This is the tableselect title');
+
+  $form['tableselect_type_help'] = array(
+    '#type' => 'help',
+    '#markup' => t("This is a '#type' => 'tableselect' form element. It should have a caption, a header row, a couple of option rows (with respective checkboxes in the left-most column), and a footer"),
+  );
+
+  $form['tableselect_type'] = array(
+    '#type' => 'tableselect',
+    '#title' => $title,
+    '#description' => t('Select some options in the tableselect above.'),
+    '#attributes' => $variables['attributes'],
+    '#header' => $variables['header'],
+    '#options' => $variables['rows'],
+    '#footer' => $variables['footer'],
+    '#sticky' => $variables['sticky'],
+    '#empty' => $variables['empty'],
+  );
+
+  $form['tableselect_type_empty_help'] = array(
+    '#type' => 'help',
+    '#markup' => t("This is an empty '#type' => 'tableselect' form element (without any option rows). It should have a caption, a header row, an empty message, and a footer - no checkboxes column."),
+  );
+
+  $form['tableselect_type_empty'] = array(
+    '#type' => 'tableselect',
+    '#title' => $title,
+    '#description' => t('Select some options in the tableselect above.'),
+    '#attributes' => $variables['attributes'],
+    '#header' => $variables['header'],
+    '#options' => array(),
+    '#footer' => $variables['footer'],
+    '#sticky' => $variables['sticky'],
+    '#empty' => $variables['empty'],
+  );
+
+  $form['table_help'] = array(
+    '#type' => 'help',
+    '#markup' => t('This is a table, as rendered by theme_table() using the same variables as the 1st tableselect above. It should be identical to it, only without the column with the checkboxes.'),
+  );
+
+  $form['table'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('table', $variables),
+  );
+
+  $form['table_empty_help'] = array(
+    '#type' => 'help',
+    '#markup' => t('This is an empty table (without rows), as rendered by theme_table() using the same variables as the 2nd tableselect above. It should be identical to it.'),
+  );
+
+  $variables['rows'] = array();
+
+  $form['table_empty'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('table', $variables),
+  );
+
+  return $form;
+}

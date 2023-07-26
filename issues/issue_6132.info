@@ -1,0 +1,12 @@
+type = module
+name = Core Issue #6132
+description = Help people test core issue #6132.
+backdrop = 1.x
+
+; Link to the module's configuration page.
+configure = admin/config/core_issues/issue_6132
+
+; Find suggested packages and tags at: https://docs.backdropcms.org/documentation/module-packages-and-tags
+package = Development
+tags[] = Development
+tags[] = Testing

@@ -2,9 +2,7 @@ type = module
 name = Core Issues Helper
 description = Provides submodules that help people test core issues.
 backdrop = 1.x
-
-; Link to the module's configuration page.
-configure = admin/config/core_issues
+hidden = true
 
 ; Add custom CSS & JS files.
 stylesheets[all][] = css/core_issues.css
